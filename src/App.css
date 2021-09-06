@@ -1,0 +1,337 @@
+@font-face {
+  font-family: "Raleway";
+  font-display: swap;
+  src: url("Raleway-VariableFont_wght.ttf");
+}
+
+body {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+div.hide-content {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+div.hide-content.visible {
+  visibility: visible;
+}
+
+header {
+  background-color: white;
+  line-height: 40px;
+  border-bottom: 1px solid black;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-bottom: 15px;
+}
+
+.hamburger {
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 16pt;
+  position: absolute;
+}
+div.site-name {
+  text-align: center;
+}
+div.site-name p {
+  margin: 0 auto;
+  font-size: 16pt;
+  user-select: none;
+  -webkit-user-select: none;
+}
+#sidebar-1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.4s;
+  transform: translateX(-100%);
+  z-index: 1001;
+  background-color: white;
+}
+#sidebar-1.open {
+  transform: translateX(0);
+}
+.sidebar {
+  padding: 10px;
+  width: 160px;
+  margin: 0;
+}
+.sidebar > li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.sidebar > li.outer {
+  font-size: 12pt;
+}
+.sidebar > li.inner {
+  margin-top: -5px;
+  font-size: 10pt;
+  padding-left: 10px;
+}
+.sidebar a {
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.close-sidebar {
+  cursor: pointer;
+  font-size: 1.5em;
+  padding-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+div.wrap {
+  padding-top: 50px;
+}
+@media (min-width: 1024px) {
+  div.wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+.card-img {
+  position: relative;
+  max-width: 100%;
+  margin: 15px 15px;
+}
+#top-photo {
+  position: relative;
+}
+video {
+  max-width: 100%;
+}
+.overlay-text {
+  background-color: white;
+  position: absolute;
+  bottom: 3%;
+  left: calc(10% + 15px);
+  right: 15px;
+  z-index: 1;
+  pointer-events: none;
+}
+p.entry-title {
+  padding: 0 20px;
+  font-size: 15pt;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+p.entry-subtitle {
+  font-size: 12pt;
+}
+p.normal-text {
+  text-align: justify;
+  padding: 0 20px;
+  text-indent: 20px;
+}
+p.quotation {
+  background-color: lightgrey;
+  padding: 10px;
+  margin: 10px 15px;
+  border-radius: 10px;
+  font-style: italic;
+}
+p.quotation span {
+  display: block;
+  font-weight: bold;
+  text-align: right;
+  font-style: normal;
+}
+.main-photo-wrap {
+  position: relative;
+}
+.big-photo {
+  box-sizing: border-box;
+  margin: 5px auto;
+  padding: 0 15px;
+}
+
+div.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+div.photo-gallery img {
+  cursor: pointer;
+  flex-basis: calc(100% / 2 - 20px);
+  margin: 5px;
+}
+div.photo-gallery img:nth-child(2n + 1) {
+  margin-left: 15px;
+}
+div.photo-gallery img:nth-child(2n) {
+  margin-right: 15px;
+}
+div.modal-gallery {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 2000;
+}
+div.modal-gallery button#close {
+  top: 5px;
+  left: 5px;
+}
+.carousel {
+  position: relative;
+  max-height: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+.carousel button {
+  cursor: pointer;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(20, 20, 20, 0.5);
+  font-size: 14pt;
+  color: white;
+  display: block;
+  z-index: 999;
+  border: none;
+}
+.carousel button#prev {
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+.carousel button#next {
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
+
+.carousel .screen {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel .screen .film {
+  display: flex;
+  overflow: hidden;
+}
+.carousel .screen .film img {
+  width: 100%;
+  transition: 0.3s;
+  transform: translateX(0);
+}
+div.video-frame {
+  margin: 15px;
+}
+div.comment-section {
+  padding: 0 20px;
+  margin-bottom: 15px;
+}
+div.comment-section div.comment-wrap {
+  margin-top: 10px;
+}
+div.comment-section div.comment {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgrey;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+div.comment-section div.comment p.comment-author {
+  flex-basis: 50px;
+  min-width: 50px;
+  margin-right: 10px;
+  position: relative;
+  text-align: center;
+}
+div.comment-section div.comment p.comment-author span {
+  display: block;
+  font-size: 20pt;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px black;
+}
+div.comment-section div.comment p.comment-message {
+  text-align: justify;
+}
+
+div.comment-section div.comment p.comment-message .date-display {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+div.comment-section div.new-comment {
+  margin: 10px 0;
+}
+div.comment-section div.new-comment input,
+div.comment-section div.new-comment textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  width: 90%;
+  border: 1px solid black;
+  font-size: 11pt;
+  font-family: "Raleway", sans-serif;
+  resize: vertical;
+}
+div.comment-section div.new-comment input.input-submit {
+  width: auto;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 6px;
+}
+div.comment-section p.date {
+  margin: 0;
+}
+div.footer {
+  position: relative;
+  padding: 15px 20px 35px 0;
+  background-color: #ddd;
+  border-top: 1px solid black;
+}
+div.footer p {
+  text-align: center;
+  padding: 0 20px;
+  margin: 0 0 10px 0;
+}
+button.scrollToTop {
+  font-family: "Raleway", sans-serif;
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  font-size: 11pt;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  padding: 5px;
+}
